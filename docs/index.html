@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#111827" />
+    <meta
+      name="description"
+      content="Official project page for TCC4DGS: Fast 4D Gaussian Splatting Reconstruction under Temporal Consistency Constraints."
+    />
+    <title>TCC4DGS | Fast 4D Gaussian Splatting Reconstruction</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Back to the top">
+        <span class="brand-mark">T</span>
+        <span>TCC4DGS</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#overview">Abstract</a>
+        <a href="#comparison-videos">Comparisons</a>
+        <a href="#experiments">Results</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero section-shell">
+        <p class="eyebrow">Fast · Compact · Temporally Consistent</p>
+        <h1>
+          <span class="hero-title-line">TCC4DGS: Fast 4D Gaussian Splatting Reconstruction</span>
+          <span class="hero-title-line">under Temporal Consistency Constraints</span>
+        </h1>
+        <p class="hero-lead">
+          TCC4DGS uses adjacent-frame optical-flow errors to guide Gaussian densification and edge-aware pruning,
+          balancing reconstruction quality, compactness, training efficiency, and temporal stability.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#overview">Read the Abstract</a>
+          <a class="button secondary" href="#comparison-videos">Watch the Demos</a>
+        </div>
+        <div class="metric-strip" aria-label="Key results on N3DV">
+          <article>
+            <strong>31.841</strong>
+            <span>PSNR ↑</span>
+          </article>
+          <article>
+            <strong>10.83 MB</strong>
+            <span>Model Size ↓</span>
+          </article>
+          <article>
+            <strong>15 min</strong>
+            <span>Training Time ↓</span>
+          </article>
+        </div>
+      </section>
+
+      <section id="overview" class="section-shell section-block">
+        <div class="section-heading">
+          <p class="eyebrow">01 · Overview</p>
+          <h2>Abstract</h2>
+        </div>
+        <div class="abstract-grid">
+          <div class="abstract-copy">
+            <p>
+              Fast 4D Gaussian Splatting (4DGS) reconstruction must balance compact Gaussian representations,
+              short training times, and stable cross-frame motion modeling. In dynamic scenes, occlusion, motion
+              blur, and transient appearance changes can corrupt frame-wise supervision, causing redundant
+              densification, erroneous pruning, and temporal artifacts such as ghosting and flicker. We present
+              TCC4DGS, a fast 4DGS reconstruction framework constrained by temporal consistency. The framework
+              evaluates cross-frame motion consistency using optical-flow errors between adjacent frames.
+              Gaussians that persistently cover high-temporal-error regions are selected as densification
+              candidates, while a pruning score combines the flow reconstruction error with an edge-aware
+              smoothness term.
+            </p>
+            <p>
+              We jointly gate per-Gaussian temporal-error scores and image-space gradients so that cloning or
+              splitting is performed only in persistently under-reconstructed regions. Candidate Gaussians are
+              subsequently evaluated to remove redundant primitives that consistently induce temporal
+              inconsistency while preserving genuine motion boundaries. Adjacent frames from the same viewpoint
+              are rasterized once each to obtain rendered optical flow efficiently. Experiments on Neural 3D
+              Video and ENeRF-Outdoor show that our method maintains or improves reconstruction quality while
+              reducing model size and accelerating training.
+            </p>
+          </div>
+          <aside class="contribution-card">
+            <span class="card-index">Four Contributions</span>
+            <h3>Core Designs</h3>
+            <ol>
+              <li><strong>General Framework</strong><span>Backbone-compatible optimization of quality and efficiency.</span></li>
+              <li><strong>TCCGD</strong><span>Temporal-consistency-guided densification.</span></li>
+              <li><strong>EAGP</strong><span>Edge-aware pruning that preserves motion boundaries.</span></li>
+              <li><strong>Joint CUDA</strong><span>Efficient image and optical-flow rasterization.</span></li>
+            </ol>
+          </aside>
+        </div>
+
+        <figure class="framework-figure">
+          <img src="assets/figures/figure-1-framework.png" alt="TCC4DGS pipeline overview" />
+          <figcaption>
+            Fig. 1. Overview of TCC4DGS. Cross-frame optical-flow errors guide densification and pruning, while
+            adjacent frames are rasterized once each in a unified CUDA pipeline.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section id="comparison-videos" class="section-shell section-block">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">02 · Demo Videos</p>
+            <h2>Multi-View Comparisons</h2>
+          </div>
+          <p>Select a scene to compare six methods over the same 300-frame camera trajectory.</p>
+        </div>
+        <div id="scene-tabs" class="scene-tabs" aria-label="Select a comparison scene">
+          <button class="scene-tab" type="button" data-scene="actor1_4" aria-pressed="true">actor1_4</button>
+          <button class="scene-tab" type="button" data-scene="actor2_3" aria-pressed="false">actor2_3</button>
+          <button class="scene-tab" type="button" data-scene="actor5_6" aria-pressed="false">actor5_6</button>
+          <button class="scene-tab" type="button" data-scene="cut_roasted_beef" aria-pressed="false">cut roasted beef</button>
+          <button class="scene-tab" type="button" data-scene="flame_steak" aria-pressed="false">flame steak</button>
+          <button class="scene-tab" type="button" data-scene="sear_steak" aria-pressed="false">sear steak</button>
+        </div>
+        <div id="comparison-video-grid" class="video-grid" aria-live="polite"></div>
+        <noscript><p class="video-noscript">JavaScript is required to switch and play comparison videos.</p></noscript>
+      </section>
+
+      <section id="experiments" class="section-shell section-block">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">03 · Experiments</p>
+            <h2>Experimental Results</h2>
+          </div>
+          <p>Qualitative figures and quantitative tables are reproduced from the English manuscript.</p>
+        </div>
+
+        <article class="result-block">
+          <div class="result-title">
+            <span>Dataset 01</span>
+            <h3>Neural 3D Video (N3DV)</h3>
+          </div>
+          <figure class="result-figure">
+            <img src="assets/figures/figure-2-n3dv.png" alt="Qualitative results on N3DV" loading="lazy" />
+            <figcaption>Fig. 2. Magnified regions show motion boundaries and detail recovery.</figcaption>
+          </figure>
+          <div class="table-scroll">
+            <table>
+              <caption>Table 1. Quantitative results on the N3DV dataset.</caption>
+              <thead><tr><th>Method</th><th>PSNR ↑</th><th>SSIM ↑</th><th>LPIPS ↓</th><th>Size/MB ↓</th><th>Time/min ↓</th></tr></thead>
+              <tbody>
+                <tr><td>4D-GS</td><td>28.525</td><td class="best">0.953</td><td>0.055</td><td>1198.12</td><td>150</td></tr>
+                <tr><td>Ex4DGS</td><td>31.600</td><td>0.949</td><td class="best">0.044</td><td>40.54</td><td>30</td></tr>
+                <tr><td>3D-4DGS</td><td>29.590</td><td>0.926</td><td>0.124</td><td>425.07</td><td>25</td></tr>
+                <tr><td>4DGaussians</td><td>26.499</td><td>0.917</td><td>0.077</td><td>53.89</td><td>60</td></tr>
+                <tr><td>4DGaussians + FastGS</td><td>26.756</td><td>0.923</td><td>0.076</td><td>19.62</td><td>30</td></tr>
+                <tr><td>4DGaussians + Ours</td><td>27.869</td><td>0.927</td><td>0.074</td><td>16.47</td><td>32</td></tr>
+                <tr><td>STGS</td><td>31.754</td><td>0.947</td><td>0.046</td><td>23.74</td><td>25</td></tr>
+                <tr><td>STGS + FastGS</td><td>31.002</td><td>0.945</td><td>0.049</td><td>16.52</td><td class="best">13</td></tr>
+                <tr class="ours-row"><td>STGS + Ours</td><td class="best">31.841</td><td>0.944</td><td>0.053</td><td class="best">10.83</td><td>15</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="result-block">
+          <div class="result-title">
+            <span>Dataset 02</span>
+            <h3>ENeRF-Outdoor</h3>
+          </div>
+          <figure class="result-figure">
+            <img src="assets/figures/figure-3-enerf-outdoor.png" alt="Qualitative results on ENeRF-Outdoor" loading="lazy" />
+            <figcaption>Fig. 3. Magnified regions emphasize moving subjects, occlusion boundaries, and background texture.</figcaption>
+          </figure>
+          <div class="table-scroll">
+            <table>
+              <caption>Table 2. Quantitative results on the ENeRF-Outdoor dataset.</caption>
+              <thead><tr><th>Method</th><th>PSNR ↑</th><th>SSIM ↑</th><th>LPIPS ↓</th><th>Size/MB ↓</th><th>Time/min ↓</th></tr></thead>
+              <tbody>
+                <tr><td>4D-GS</td><td>24.627</td><td>0.793</td><td>0.128</td><td>4699.41</td><td>240</td></tr>
+                <tr><td>Ex4DGS</td><td>25.644</td><td>0.817</td><td>0.121</td><td>71.64</td><td>25</td></tr>
+                <tr><td>3D-4DGS</td><td>22.822</td><td>0.593</td><td>0.425</td><td>390.41</td><td>17</td></tr>
+                <tr><td>4DGaussians</td><td>20.950</td><td>0.581</td><td>0.344</td><td>177.24</td><td>130</td></tr>
+                <tr><td>4DGaussians + FastGS</td><td>22.346</td><td>0.654</td><td>0.283</td><td>61.79</td><td>60</td></tr>
+                <tr><td>4DGaussians + Ours</td><td>22.830</td><td>0.689</td><td>0.261</td><td>53.07</td><td>70</td></tr>
+                <tr><td>STGS</td><td>23.737</td><td>0.837</td><td class="best">0.102</td><td>94.07</td><td>17</td></tr>
+                <tr><td>STGS + FastGS</td><td>23.851</td><td>0.830</td><td>0.124</td><td>65.87</td><td class="best">13</td></tr>
+                <tr class="ours-row"><td>STGS + Ours</td><td class="best">25.865</td><td class="best">0.849</td><td class="best">0.102</td><td class="best">53.77</td><td>15</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+      </section>
+    </main>
+
+    <footer>
+      <p>TCC4DGS · Official Project Page</p>
+      <a href="#top">Back to top ↑</a>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
