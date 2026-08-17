@@ -33,6 +33,7 @@ Our contributions include:
 > ⏳ **Loading Notice:** GIFs are large files and may take 10–30 seconds to load. Please wait patiently.
 >
 > ⚠️ **Quality Note:**
+>
 > - Embedded GIFs are compressed for preview and may appear blurry.
 > - For the highest quality visualization, download the original MP4 videos linked below.
 
@@ -78,7 +79,7 @@ The full code will be released **upon paper acceptance**.
 
 Contact information will be provided with the public release.
 
-## 📄 Citation
+<!-- ## 📄 Citation
 
 If you find our work useful, please cite:
 
@@ -91,4 +92,4 @@ If you find our work useful, please cite:
 }
 ```
 
-The author list and venue will be updated after the review process.
+The author list and venue will be updated after the review process. -->
