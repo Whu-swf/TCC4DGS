@@ -98,8 +98,16 @@
         <figure class="framework-figure">
           <img src="assets/figures/figure-1-framework.png" alt="TCC4DGS pipeline overview" />
           <figcaption>
-            Fig. 1. Overview of TCC4DGS. Cross-frame optical-flow errors guide densification and pruning, while
-            adjacent frames are rasterized once each in a unified CUDA pipeline.
+            Fig. 1. Overview of TCC4DGS. (1) Multiview videos initialize a Gaussian scene representation with
+            time-varying primitives by sampling <em>j</em> viewpoints and selecting the same frame <em>i</em> for each
+            viewpoint. (2) Optical-flow errors are normalized into an error map; a high-error mask is generated with
+            the flow-error threshold τ<sub>flow</sub>, and statistics across the sampled views form the Optical Flow
+            Score. (3) High-temporal-error Gaussians and image gradients jointly determine densification candidates.
+            The flow reconstruction error and <span class="math-term">L<sub>ea</sub></span> form the pruning score, where
+            <span class="math-term">L<sub>ea</sub></span> is an edge-aware smoothness term controlled by edge-weight
+            and smoothing coefficients. (4) Adjacent frames from the same viewpoint are rasterized once each to
+            obtain rendered optical flow efficiently. Image<sub>loss</sub> and Flow<sub>loss</sub> jointly update the
+            time-varying Gaussian parameters.
           </figcaption>
         </figure>
       </section>
