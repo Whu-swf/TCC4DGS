@@ -78,18 +78,3 @@ Our contributions include:
 The full code will be released **upon paper acceptance**.
 
 Contact information will be provided with the public release.
-
-<!-- ## 📄 Citation
-
-If you find our work useful, please cite:
-
-```bibtex
-@article{tcc4dgs2026,
-  title={TCC4DGS: Fast 4D Gaussian Splatting Reconstruction under Temporal Consistency Constraints},
-  author={Anonymous Authors},
-  journal={Under Review},
-  year={2026}
-}
-```
-
-The author list and venue will be updated after the review process. -->
