@@ -19,7 +19,7 @@ Our contributions include:
   <img src="./img/pipeline.png"
        alt="TCC4DGS Pipeline Overview"
        style="width:100%; max-width:1400px;">
-  <p><i>Fig. 1. Overview of TCC4DGS. (1) Multiview videos are used to initialize a Gaussian scene representation with time-varying primitives. We first sample <i>j</i> viewpoints and then select the same frame <i>i</i> for each sampled viewpoint. (2) The optical-flow error is normalized into an error map. A high-error mask is generated using the flow-error threshold τ<sub>flow</sub>, and error statistics are accumulated across the <i>j</i> sampled views to obtain the Optical Flow Score. (3) High-temporal-error Gaussians and image gradients jointly determine densification candidates. The flow reconstruction error is combined with L<sub>ea</sub> to form the pruning score, where L<sub>ea</sub> denotes an edge-aware smoothness term controlled by the edge-weight and smoothing coefficients. (4) Adjacent frames from the same viewpoint are rasterized once each to obtain rendered optical flow efficiently. Image<sub>loss</sub> and Flow<sub>loss</sub> jointly update the time-varying Gaussian parameters.</i></p>
+  <p style="text-align:left; max-width:1400px; margin:12px auto;"><i>Fig. 1. Overview of TCC4DGS. (1) Multiview videos are used to initialize a Gaussian scene representation with time-varying primitives. We first sample <i>j</i> viewpoints and then select the same frame <i>i</i> for each sampled viewpoint. (2) The optical-flow error is normalized into an error map. A high-error mask is generated using the flow-error threshold τ<sub>flow</sub>, and error statistics are accumulated across the <i>j</i> sampled views to obtain the Optical Flow Score. (3) High-temporal-error Gaussians and image gradients jointly determine densification candidates. The flow reconstruction error is combined with L<sub>ea</sub> to form the pruning score, where L<sub>ea</sub> denotes an edge-aware smoothness term controlled by the edge-weight and smoothing coefficients. (4) Adjacent frames from the same viewpoint are rasterized once each to obtain rendered optical flow efficiently. Image<sub>loss</sub> and Flow<sub>loss</sub> jointly update the time-varying Gaussian parameters.</i></p>
 </div>
 
 ## 📊 Qualitative Results
@@ -28,6 +28,36 @@ Our contributions include:
   <img src="./img/Fig2.png" alt="Qualitative results on the N3DV dataset" style="width:100%; max-width:1400px;"><br>
   <img src="./img/Fig3.png" alt="Qualitative results on the ENeRF-Outdoor dataset" style="width:100%; max-width:1400px;">
 </div>
+
+### Quantitative Results
+
+**Table 1. N3DV dataset.**
+
+| Method | PSNR ↑ | SSIM ↑ | LPIPS ↓ | Size/MB ↓ | Time/min ↓ |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| 4D-GS | 28.525 | **0.953** | 0.055 | 1198.12 | 150 |
+| Ex4DGS | 31.600 | 0.949 | **0.044** | 40.54 | 30 |
+| 3D-4DGS | 29.590 | 0.926 | 0.124 | 425.07 | 25 |
+| 4DGaussians | 26.499 | 0.917 | 0.077 | 53.89 | 60 |
+| 4DGaussians + FastGS | 26.756 | 0.923 | 0.076 | 19.62 | 30 |
+| 4DGaussians + Ours | 27.869 | 0.927 | 0.074 | 16.47 | 32 |
+| STGS | 31.754 | 0.947 | 0.046 | 23.74 | 25 |
+| STGS + FastGS | 31.002 | 0.945 | 0.049 | 16.52 | **13** |
+| **STGS + Ours** | **31.841** | 0.944 | 0.053 | **10.83** | 15 |
+
+**Table 2. ENeRF-Outdoor dataset.**
+
+| Method | PSNR ↑ | SSIM ↑ | LPIPS ↓ | Size/MB ↓ | Time/min ↓ |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| 4D-GS | 24.627 | 0.793 | 0.128 | 4699.41 | 240 |
+| Ex4DGS | 25.644 | 0.817 | 0.121 | 71.64 | 25 |
+| 3D-4DGS | 22.822 | 0.593 | 0.425 | 390.41 | 17 |
+| 4DGaussians | 20.950 | 0.581 | 0.344 | 177.24 | 130 |
+| 4DGaussians + FastGS | 22.346 | 0.654 | 0.283 | 61.79 | 60 |
+| 4DGaussians + Ours | 22.830 | 0.689 | 0.261 | 53.07 | 70 |
+| STGS | 23.737 | 0.837 | **0.102** | 94.07 | 17 |
+| STGS + FastGS | 23.851 | 0.830 | 0.124 | 65.87 | **13** |
+| **STGS + Ours** | **25.865** | **0.849** | **0.102** | **53.77** | 15 |
 
 ## 🎬 Demo Videos
 
