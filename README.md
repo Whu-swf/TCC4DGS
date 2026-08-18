@@ -35,16 +35,19 @@ Our contributions include:
 
 <div align="center">
   <video src="./demo/cut_roasted_beef.mp4" controls muted loop playsinline width="100%"></video>
+  <img src="./demo/cut_roasted_beef.gif" width="100%" alt="Cut Roasted Beef Scene GIF">
   <p><i>Cut Roasted Beef Scene — <a href="./demo/cut_roasted_beef.mp4">Download High-Quality MP4</a></i></p>
 </div>
 
 <div align="center">
   <video src="./demo/flame_steak.mp4" controls muted loop playsinline width="100%"></video>
+  <img src="./demo/flame_steak.gif" width="100%" alt="Flame Steak Scene GIF">
   <p><i>Flame Steak Scene — <a href="./demo/flame_steak.mp4">Download High-Quality MP4</a></i></p>
 </div>
 
 <div align="center">
   <video src="./demo/sear_steak.mp4" controls muted loop playsinline width="100%"></video>
+  <img src="./demo/sear_steak.gif" width="100%" alt="Sear Steak Scene GIF">
   <p><i>Sear Steak Scene — <a href="./demo/sear_steak.mp4">Download High-Quality MP4</a></i></p>
 </div>
 
@@ -54,16 +57,19 @@ Our contributions include:
 
 <div align="center">
   <video src="./demo/actor1_4.mp4" controls muted loop playsinline width="100%"></video>
+  <img src="./demo/actor1_4.gif" width="100%" alt="Actor 1 4 Scene GIF">
   <p><i>Actor 1_4 Scene — <a href="./demo/actor1_4.mp4">Download High-Quality MP4</a></i></p>
 </div>
 
 <div align="center">
   <video src="./demo/actor2_3.mp4" controls muted loop playsinline width="100%"></video>
+  <img src="./demo/actor2_3.gif" width="100%" alt="Actor 2 3 Scene GIF">
   <p><i>Actor 2_3 Scene — <a href="./demo/actor2_3.mp4">Download High-Quality MP4</a></i></p>
 </div>
 
 <div align="center">
   <video src="./demo/actor5_6.mp4" controls muted loop playsinline width="100%"></video>
+  <img src="./demo/actor5_6.gif" width="100%" alt="Actor 5 6 Scene GIF">
   <p><i>Actor 5_6 Scene — <a href="./demo/actor5_6.mp4">Download High-Quality MP4</a></i></p>
 </div>
 
