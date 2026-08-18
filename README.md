@@ -31,27 +31,20 @@ Our contributions include:
 
 ## 🎬 Demo Videos
 
-> ⏳ **Loading Notice:** GIFs are large files and may take 10–30 seconds to load. Please wait patiently.
->
-> ⚠️ **Quality Note:**
->
-> - Embedded GIFs are compressed for preview and may appear blurry.
-> - For the highest quality visualization, download the original MP4 videos linked below.
-
 ### Indoor Scene Reconstruction Demos
 
 <div align="center">
-  <img src="./demo/cut_roasted_beef.gif" width="100%" alt="Cut Roasted Beef Scene">
+  <video src="./demo/cut_roasted_beef.mp4" controls muted loop playsinline width="100%"></video>
   <p><i>Cut Roasted Beef Scene — <a href="./demo/cut_roasted_beef.mp4">Download High-Quality MP4</a></i></p>
 </div>
 
 <div align="center">
-  <img src="./demo/flame_steak.gif" width="100%" alt="Flame Steak Scene">
+  <video src="./demo/flame_steak.mp4" controls muted loop playsinline width="100%"></video>
   <p><i>Flame Steak Scene — <a href="./demo/flame_steak.mp4">Download High-Quality MP4</a></i></p>
 </div>
 
 <div align="center">
-  <img src="./demo/sear_steak.gif" width="100%" alt="Sear Steak Scene">
+  <video src="./demo/sear_steak.mp4" controls muted loop playsinline width="100%"></video>
   <p><i>Sear Steak Scene — <a href="./demo/sear_steak.mp4">Download High-Quality MP4</a></i></p>
 </div>
 
@@ -60,17 +53,17 @@ Our contributions include:
 ### Outdoor Scene Reconstruction Demos
 
 <div align="center">
-  <img src="./demo/actor1_4.gif" width="100%" alt="Actor 1 4 Scene">
+  <video src="./demo/actor1_4.mp4" controls muted loop playsinline width="100%"></video>
   <p><i>Actor 1_4 Scene — <a href="./demo/actor1_4.mp4">Download High-Quality MP4</a></i></p>
 </div>
 
 <div align="center">
-  <img src="./demo/actor2_3.gif" width="100%" alt="Actor 2 3 Scene">
+  <video src="./demo/actor2_3.mp4" controls muted loop playsinline width="100%"></video>
   <p><i>Actor 2_3 Scene — <a href="./demo/actor2_3.mp4">Download High-Quality MP4</a></i></p>
 </div>
 
 <div align="center">
-  <img src="./demo/actor5_6.gif" width="100%" alt="Actor 5 6 Scene">
+  <video src="./demo/actor5_6.mp4" controls muted loop playsinline width="100%"></video>
   <p><i>Actor 5_6 Scene — <a href="./demo/actor5_6.mp4">Download High-Quality MP4</a></i></p>
 </div>
 
